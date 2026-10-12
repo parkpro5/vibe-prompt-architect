@@ -1,4 +1,4 @@
-# vibe-prompt-architect (스무고개 바이브코딩 지침 설계자)
+# vibe-prompt-architect (바이브코딩 지침제작 스킬)
 
 스무고개식 질문으로 아이디어를 구체화한 뒤, **PRD → TASK → PLAN** 단계를 거쳐 하나의 통합 지침서 `VIBE_BRIEF.md`를 만들어 주는 Claude 스킬입니다. 비개발자도 코딩 에이전트(Claude Code 등)에 바로 넣어 쓸 수 있는 수준의 지침서를 만드는 것이 목표입니다.
 
