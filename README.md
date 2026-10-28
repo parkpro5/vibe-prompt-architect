@@ -59,6 +59,54 @@ Copy-Item -Recurse .\vibe-prompt-architect\vibe-prompt-architect "$HOME\.claude\
 
 > claude.ai에 업로드한 스킬은 Claude 계정으로 로그인한 Claude Code와 자동 동기화됩니다(시작 시와 약 10분마다). 이 경우 Claude Code에 따로 복사하지 않아도 됩니다.
 
+### 방법 3. Hermes Agent Desktop
+
+Hermes Agent는 스킬 폴더 안의 `SKILL.md`를 읽어 스킬을 인식합니다. 저장소를 Hermes 스킬 폴더 안에 `vibe-prompt-architect`라는 이름으로 내려받으면 됩니다.
+
+| OS | 스킬 폴더 위치 |
+|---|---|
+| Windows | `C:\Users\<사용자명>\.hermes\skills\` |
+| macOS/Linux | `~/.hermes/skills/` |
+
+> 앱 버전이나 설정에 따라 스킬 폴더 위치가 다를 수 있습니다. 보이지 않으면 Hermes 설정에서 스킬 디렉터리 경로를 확인하세요.
+
+**1) 설치**
+
+macOS/Linux:
+
+```bash
+mkdir -p ~/.hermes/skills
+git clone https://github.com/parkpro5/vibe-prompt-architect.git ~/.hermes/skills/vibe-prompt-architect
+```
+
+Windows(PowerShell):
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME\.hermes\skills" | Out-Null
+git clone https://github.com/parkpro5/vibe-prompt-architect.git "$HOME\.hermes\skills\vibe-prompt-architect"
+```
+
+설치 후 경로가 `skills/vibe-prompt-architect/SKILL.md`인지 확인하세요. (폴더가 한 번 더 중첩되면 인식되지 않을 수 있습니다.)
+
+Git이 없다면 저장소 페이지에서 **Code → Download ZIP**으로 내려받아 압축을 풀고, `SKILL.md`가 바로 보이는 폴더를 `vibe-prompt-architect` 이름으로 스킬 폴더에 복사하세요.
+
+**2) 적용 및 확인**
+
+1. Hermes Agent Desktop을 완전히 종료한 뒤 다시 실행합니다.
+2. 스킬 목록에 `vibe-prompt-architect`가 보이는지 확인합니다.
+3. 대화창에서 요청합니다.
+
+   > "스무고개로 아이디어 구체화해서 바이브코딩 지침서 만들어줘"
+
+**3) 업데이트**
+
+```bash
+cd ~/.hermes/skills/vibe-prompt-architect
+git pull
+```
+
+Windows(PowerShell)는 `cd "$HOME\.hermes\skills\vibe-prompt-architect"` 후 `git pull`을 실행합니다.
+
 ## 사용 방법
 
 대화창에서 아래처럼 말하면 스킬이 발동됩니다.
